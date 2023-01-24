@@ -1,0 +1,61 @@
+<!-- HTML for the home screen -->
+<div id="home-screen">
+    <h1>Snake Game</h1>
+    <button id="start-button">Start Game</button>
+    <button id="settings-button">Settings</button>
+    <canvas id="snake-game" width="800" height="600"></canvas>
+    <body style="background-image: url('background.png'); background-size: cover; background-repeat: no-repeat;">
+  </div>
+  
+  <!-- CSS for styling the home screen -->
+  <style>
+    #home-screen {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-family: sans-serif;
+    }
+    #home-screen h1 {
+      margin: 0;
+      padding: 0;
+      color: #fff;
+      font-size: 70px;
+    }
+    #home-screen button {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #fff;
+      color: #000;
+      cursor: pointer;
+    }
+    #home-screen button:hover {
+      background-color: #ccc;
+    }
+  </style>
+  
+  <!-- JavaScript for handling user interactions with the home screen -->
+  <script>
+    // Get the start, settings, and instructions buttons
+    var startButton = document.getElementById("start-button");
+  
+    // Add event listeners for the buttons
+    startButton.addEventListener("click", startGame);
+  
+    // Define the functions that will be called when the buttons are clicked
+    function startGame() {
+        // Hide the home screen
+        //document.getElementById("home-screen").style.display = "none";
+
+        // Import the snake-game.js file
+        var gameScript = document.createElement("script");
+        gameScript.src = "snake-game.js";
+        document.body.appendChild(gameScript);
+    }   
+
+  </script>
+
+
